@@ -1,0 +1,54 @@
+<template class="task-template">
+  <section id="pdf-open-section" class="section js-section u-category-media">
+    <header class="section-header">
+      <div class="section-wrapper">
+        <h1>
+          <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
+          Open PDF
+        </h1>
+        <h3>Using pdf.js from Mozilla to read PDF files. PDF.js is "A general-purpose, web standards-based platform for parsing and rendering PDFs"</h3>
+
+        <p>Open the <a href="https://mozilla.github.io/pdf.js/api/">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+      </div>
+    </header>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="basic-setup-demo-toggle" class="js-container-target demo-toggle-button">Basic Setup
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="basic-setup-demo-button">View Demo</button>
+            <span class="demo-response is-selectable" id="pdf-path"></span>
+          </div>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/media/pdf-setup.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="first-page-demo-toggle" class="js-container-target demo-toggle-button">First Page
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="open-pdf">View Demo</button>
+            <span class="demo-response is-selectable" id="pdf-path"></span>
+          </div>
+          <canvas id="pdf-canvas" style="border:1px  solid black"></canvas>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/media/pdf-open.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      require('./renderer-process/media/pdf-setup')
+      require('./renderer-process/media/pdf-open')
+    </script>
+
+  </section>
+</template>
