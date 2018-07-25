@@ -1,16 +1,16 @@
 const {ipcRenderer} = require('electron')
-const pdfjsLib = require('pdfjs-dist')
+const pdfjsLibOpen = require('pdfjs-dist')
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = './node_modules/pdfjs-dist/build/pdf.worker.js';
+pdfjsLibOpen.GlobalWorkerOptions.workerSrc = './node_modules/pdfjs-dist/build/pdf.worker.js';
 
-const openPDFBtn = document.getElementById('basic-setup-demo-button')
+const openPDFBtn = document.getElementById('first-page-demo-button')
 
 openPDFBtn.addEventListener('click', (event) => {
   // Will be using promises to load document, pages and misc data instead of
   // callback.
   let pdfPath = 'assets/pdf/das-kleine-schwarze-naehen-data.pdf'
 
-  pdfjsLib.getDocument(pdfPath).then( (pdf) => {
+  pdfjsLibOpen.getDocument(pdfPath).then( (pdf) => {
     let numPages = pdf.numPages;
     console.log('# Document Loaded');
     console.log('Number of Pages: ' + numPages);
@@ -22,7 +22,7 @@ openPDFBtn.addEventListener('click', (event) => {
       //
       // Prepare canvas using PDF page dimensions
       //
-      var canvas = document.getElementById('pdf-canvas');
+      var canvas = document.getElementById('first-page-pdf-canvas');
       var context = canvas.getContext('2d');
       canvas.height = viewport.height;
       canvas.width = viewport.width;

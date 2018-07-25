@@ -35,12 +35,27 @@
         </button>
         <div class="demo-box">
           <div class="demo-controls">
-            <button class="demo-button" id="open-pdf">View Demo</button>
-            <span class="demo-response is-selectable" id="pdf-path"></span>
+            <button class="demo-button" id="first-page-demo-button">View Demo</button>
           </div>
-          <canvas id="pdf-canvas" style="border:1px  solid black"></canvas>
+          <canvas id="first-page-pdf-canvas" style="border:1px  solid black"></canvas>
           <h5>Renderer Process</h5>
           <pre><code data-path="renderer-process/media/pdf-open.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="all-page-demo-toggle" class="js-container-target demo-toggle-button">All Pages
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="all-page-demo-button">View Demo</button>
+          </div>
+          <div id="all-page-pdf-canvases"></div>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/media/pdf-pages.js"></code></pre>
         </div>
       </div>
     </div>
@@ -48,6 +63,7 @@
     <script type="text/javascript">
       require('./renderer-process/media/pdf-setup')
       require('./renderer-process/media/pdf-open')
+      require('./renderer-process/media/pdf-pages')
     </script>
 
   </section>
