@@ -4,11 +4,16 @@
       <div class="section-wrapper">
         <h1>
           <svg class="section-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
-          Open PDF
+          PDF.js
         </h1>
         <h3>Using pdf.js from Mozilla to read PDF files. PDF.js is "A general-purpose, web standards-based platform for parsing and rendering PDFs"</h3>
 
         <p>Open the <a href="https://mozilla.github.io/pdf.js/api/">full API documentation<span class="u-visible-to-screen-reader">(opens in new window)</span></a> in your browser.</p>
+        
+        <h3>tutorials:</h3>
+        <ul>
+          <li><a href="https://rossta.net/blog/building-a-pdf-viewer-with-vue-part-1.html">Rendering PDF pages with PDF.js and Vue</a></li>
+        </ul>
       </div>
     </header>
 
@@ -60,10 +65,43 @@
       </div>
     </div>
 
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="one-canvas-demo-toggle" class="js-container-target demo-toggle-button">One Canvas
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="one-canvas-demo-button">View Demo</button>
+          </div>
+          <canvas id="pdf-one-canvas" style="border:1px  solid black"></canvas>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/media/pdf-one-canvas.js"></code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="demo">
+      <div class="demo-wrapper">
+        <button id="rotate-demo-toggle" class="js-container-target demo-toggle-button">Page rotations
+          <div class="demo-meta u-avoid-clicks">Supports: Win, macOS, Linux</div>
+        </button>
+        <div class="demo-box">
+          <div class="demo-controls">
+            <button class="demo-button" id="rotate-demo-button">View Demo</button>
+          </div>
+          <canvas id="rotate-canvas" style="border:1px  solid black"></canvas>
+          <h5>Renderer Process</h5>
+          <pre><code data-path="renderer-process/media/pdf-rotate.js"></code></pre>
+        </div>
+      </div>
+    </div>
+
     <script type="text/javascript">
       require('./renderer-process/media/pdf-setup')
       require('./renderer-process/media/pdf-open')
       require('./renderer-process/media/pdf-pages')
+      require('./renderer-process/media/pdf-one-canvas')
+      require('./renderer-process/media/pdf-rotate')
     </script>
 
   </section>

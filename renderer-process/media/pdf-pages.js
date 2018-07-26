@@ -25,6 +25,12 @@ allPDFBtn.addEventListener("click", event => {
 function renderPage(pageNumber, canvas) {
   pdfdoc.getPage(pageNumber).then(page => {
     let scale = 0.25;
+    // applay padding
+    page.pageInfo.view[0] += 58;
+    page.pageInfo.view[1] += 58;
+    page.pageInfo.view[2] -= 58;
+    page.pageInfo.view[3] -= 58;
+
     viewport = page.getViewport(scale);
     canvas.height = viewport.height;
     canvas.width = viewport.width;
